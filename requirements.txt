@@ -1,0 +1,9 @@
+Keras==2.4.3
+opencv-python==4.4.0.44
+Pillow==8.0.0
+python-dateutil==2.8.1
+streamlit==0.79.0
+tensorflow==2.4.1
+googlesearch-python
+matplotlib==3.3.2
+mysql-connector-python==8.0.11
