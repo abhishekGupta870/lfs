@@ -227,7 +227,7 @@ class plant_diseases_detection():
 
       with col10:
         st.write("Om Prakash")
-        st.image(image,caption="OmPrakash)
+        st.image(image,caption="OmPrakash")
         
       
     def pesticide_c(pred):
