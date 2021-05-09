@@ -12,7 +12,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
 st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True,max_entries=10, ttl=360)
 def lModel(y):
   x=load_model(y)
   return x
@@ -31,7 +31,7 @@ class plant_diseases_detection():
     st.title("Plant Diseases Detection")
     
   
-    ######### -------------- Sidebarr--------------------->
+    ######## -------------- Sidebarr--------------------->
     add_selectbox = st.sidebar.selectbox(
     'select the model for classification',
     ('MobileNetV2','VGG16',"ResNet50","InceptionV3",'Xception','About Data','Contact us'))
