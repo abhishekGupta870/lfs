@@ -12,7 +12,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
 st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
-@st.cache(allow_output_mutation=True,max_entries=10, ttl=36)
+@st.cache(allow_output_mutation=True)
 def lModel(y):
   x=load_model(y)
   return x
@@ -21,7 +21,7 @@ MobileNetV2_model=load_model('MobileNetV2_50_epoch.h5')
 InceptionV3_model=lModel('InceptionV3.h5')
 VGG16_model=load_model('VGG16.h5')
 ResNet50_model= lModel("ResNet50.h5")
-@st.cache
+@st.cache(allow_output_mutation=True)
 class plant_diseases_detection():
   global pred
   def page_setup():
