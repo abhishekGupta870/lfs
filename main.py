@@ -16,7 +16,7 @@ Xception_model=load_model('Xception.h5')
 MobileNetV2_model=load_model('MobileNetV2_50_epoch.h5')
 InceptionV3_model=load_model('InceptionV3.h5')
 VGG16_model=load_model('VGG16.h5')
-ResNet50_model= load_model("ResNet50.h5")
+#ResNet50_model= load_model("ResNet50.h5")
 @st.cache
 class plant_diseases_detection():
   global pred
