@@ -11,7 +11,7 @@ import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
-#@st.cache
+@st.cache
 Xception_model=load_model('Xception.h5')
 MobileNetV2_model=load_model('MobileNetV2_50_epoch.h5')
 InceptionV3_model=load_model('InceptionV3.h5')
