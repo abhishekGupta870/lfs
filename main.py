@@ -115,11 +115,11 @@ class plant_diseases_detection():
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('DataImages/resnet_acc.png')
+            image=Image.open("DataImages/resnet_acc.png")
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('DataImages/resnet_loss.png')
+            image=Image.open("DataImages/resnet_loss.png")
             st.image(image)
           
           
@@ -136,11 +136,11 @@ class plant_diseases_detection():
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('DataImages/vgg_acc.png')
+            image=Image.open("DataImages/vgg_acc.png")
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('DataImages/vgg_loss.png')
+            image=Image.open("DataImages/vgg_loss.png")
             st.image(image)
         
 
@@ -158,12 +158,12 @@ class plant_diseases_detection():
         with col1:
           if st.checkbox("Accuracy Graph"):
             st.write(" MobileNetV2 Accuracy Graph:")
-            image=Image.open('DataImages/mob_acc.png')
+            image=Image.open("DataImages/mob_acc.png")
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
             st.write("MobileNetV2 Loss Graph:")
-            image=Image.open('DataImages/mob_loss.png')
+            image=Image.open("DataImages/mob_loss.png")
             st.image(image)
         
         
@@ -179,11 +179,11 @@ class plant_diseases_detection():
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('DataImages/xception_acc.png')
+            image=Image.open("DataImages/xception_acc.png")
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('DataImages/xception_loss.png')
+            image=Image.open("DataImages/xception_loss.png")
             st.image(image)
         
         
@@ -201,11 +201,11 @@ class plant_diseases_detection():
         col1,col2=st.beta_columns(2)
         with col1:
           if st.checkbox("Accuracy Graph"):
-            image=Image.open('DataImages/inception_acc.png')
+            image=Image.open("DataImages/inception_acc.png")
             st.image(image)
         with col2:
           if st.checkbox("Loss Graph"):
-            image=Image.open('DataImages/inception_loss.png')
+            image=Image.open("DataImages/inception_loss.png")
             st.image(image)
         
 
@@ -226,7 +226,7 @@ class plant_diseases_detection():
         st.image(image,caption="Abhishek")
 
 
-      with col19:
+      with col9:
         image=Image.open("DataImages/om.jpg")
         #st.write("Om Prakash Swami")
         st.image(image,caption="OmPrakash")
@@ -264,7 +264,7 @@ class plant_diseases_detection():
 
     ############# model selection ################
     if(add_selectbox=='VGG16' or add_selectbox=='MobileNetV2'or add_selectbox=='ResNet50' or add_selectbox=='InceptionV3' or add_selectbox=='Xception'):
-      file_uploader=st.file_uploader('Upload cloth Image for Classification:')
+      file_uploader=st.file_uploader('Upload Image for Classification:')
       st.set_option('deprecation.showfileUploaderEncoding', False)
       if file_uploader is not None:
         image=Image.open(file_uploader)
