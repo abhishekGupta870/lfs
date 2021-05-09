@@ -221,11 +221,13 @@ class plant_diseases_detection():
     
         #st.markdown(""" <h1> wellcome """ "unsafe_allow_html=True")
       with col8:
+        image=Image.open("DataImages/abhishek.jpg")
         st.write("Abhishek Gupta")
         st.image(image,caption="Abhishek")
 
 
       with col19:
+        image=Image.open('DataImages/om.jpg')
         st.write("Om Prakash Swami")
         st.image(image,caption="OmPrakash")
         
