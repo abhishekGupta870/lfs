@@ -11,6 +11,7 @@ import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
+st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
 @st.cache(allow_output_mutation=True,max_entries=10,ttl=3600)
 def lModel(y):
   x=load_model(y)
@@ -25,7 +26,7 @@ class plant_diseases_detection():
   global pred
   def page_setup():
     global pred
-    st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
+   
     
     st.title("Plant Diseases Detection")
     
