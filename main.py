@@ -11,12 +11,15 @@ import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
-#@st.cache
-Xception_model=load_model('Xception.h5')
-MobileNetV2_model=load_model('MobileNetV2_50_epoch.h5')
-InceptionV3_model=load_model('InceptionV3.h5')
-VGG16_model=load_model('VGG16.h5')
-#ResNet50_model= load_model("ResNet50.h5")
+@st.cache(allow_output_mutation=True,max_entries=10,ttl=3600)
+def lModel(y):
+  x=load_model(y)
+  return x
+Xception_model=lModel('Xception.h5')
+MobileNetV2_model=llModel('MobileNetV2_50_epoch.h5')
+InceptionV3_model=lModel('InceptionV3.h5')
+VGG16_model=lModel('VGG16.h5')
+ResNet50_model= lModel("ResNet50.h5")
 @st.cache
 class plant_diseases_detection():
   global pred
