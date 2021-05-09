@@ -12,11 +12,11 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 #from tensorflow import keras
 #@st.cache
-#Xception_model=load_model('Xception.h5')
+Xception_model=load_model('Xception.h5')
 MobileNetV2_model=load_model('MobileNetV2_50_epoch.h5')
-#InceptionV3_model=load_model('InceptionV3.h5')
-#VGG16_model=load_model('VGG16.h5')
-#ResNet50_model= load_model("ResNet50.h5")
+InceptionV3_model=load_model('InceptionV3.h5')
+VGG16_model=load_model('VGG16.h5')
+ResNet50_model= load_model("ResNet50.h5")
 @st.cache
 class plant_diseases_detection():
   global pred
@@ -30,7 +30,7 @@ class plant_diseases_detection():
     ######### -------------- Sidebarr--------------------->
     add_selectbox = st.sidebar.selectbox(
     'select the model for classification',
-    ('MobileNetV2','VGG16',"ResNet50","InceptionV3",'Xception','About Data','Working Demo','Contact us'))
+    ('MobileNetV2','VGG16',"ResNet50","InceptionV3",'Xception','About Data','Contact us'))
     #options=st.selectbox('How would you like to be contacted?',('Email', 'Home phone', 'Mobile phone'))
 
     def classes(pred):
@@ -213,20 +213,20 @@ class plant_diseases_detection():
 
     if add_selectbox=="Contact us":
       
-      col8,col9,col10=st.beta_columns(3)
-      with col8:
+      col8,col9=st.beta_columns(2)
+      #with col8:
         #st.write("Sandeep Yadav")
-        image=Image.open("DataImages/Sandeep_Yadav.jpg")
-        st.image(image,caption="Sandeep Yadav")
+       # image=Image.open("DataImages/Sandeep_Yadav.jpg")
+        #st.image(image,caption="Sandeep Yadav")
     
         st.markdown(""" <h1> wellcome """ "unsafe_allow_html=True")
-      with col9:
-        st.write("Abhishek")
+      with col8:
+        st.write("Abhishek Gupta")
         st.image(image,caption="Abhishek")
 
 
-      with col10:
-        st.write("Om Prakash")
+      with col19:
+        st.write("Om Prakash Swami")
         st.image(image,caption="OmPrakash")
         
       
