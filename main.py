@@ -20,7 +20,7 @@ Xception_model=lModel('Xception.h5')
 MobileNetV2_model=lModel('MobileNetV2_50_epoch.h5')
 InceptionV3_model=lModel('InceptionV3.h5')
 VGG16_model=lModel('VGG16.h5')
-#ResNet50_model= lModel("ResNet50.h5")
+ResNet50_model= lModel("ResNet50.h5")
 
 class plant_diseases_detection():
   global pred
