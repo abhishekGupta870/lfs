@@ -4,13 +4,8 @@ from keras.models import load_model
 import io
 import time
 from googlesearch import search
-#from tensorflow import keras
 from PIL import Image,ImageOps
 import numpy as np
-import requests
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-#from tensorflow import keras
 st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
 @st.cache(allow_output_mutation=True,persist=False)
 def lModel(y):
@@ -35,7 +30,7 @@ class plant_diseases_detection():
     add_selectbox = st.sidebar.selectbox(
     'Select the Model for Classification',
     ('Xception','VGG16',"ResNet50","InceptionV3",'MobileNetV2','About Data','Contact us'))
-    #options=st.selectbox('How would you like to be contacted?',('Email', 'Home phone', 'Mobile phone'))
+    
 
     def classes(pred):
       
@@ -105,7 +100,7 @@ class plant_diseases_detection():
           if st.button("Disease Class"):
             st.write(disease_classes)
 
-############## pending          ******************************************************************************IMP
+############## Medel info        ******************************************************************************IMP
             
       if model_selection=='ResNet50 Model':
         resnet_training_acc=99.28
@@ -218,22 +213,15 @@ class plant_diseases_detection():
     if add_selectbox=="Contact us":
       
       col8,col9=st.beta_columns(2)
-      #with col8:
-        #st.write("Sandeep Yadav")
-       # image=Image.open("DataImages/Sandeep_Yadav.jpg")
-        #st.image(image,caption="Sandeep Yadav")
-    
-        #st.markdown(""" <h1> wellcome """ "unsafe_allow_html=True")
+
       with col8:
         image=Image.open("DataImages/abhishek.jpg")
-        #st.write("Abhishek Gupta")
-        st.image(image,caption="Abhishek")
+        st.image(image,caption="Abhishek Gupta")
 
 
       with col9:
         image=Image.open("DataImages/om.jpg")
-        #st.write("Om Prakash Swami")
-        st.image(image,caption="OmPrakash")
+        st.image(image,caption="Om Prakash Swami")
         
       
     def pesticide_c(pred):
@@ -279,13 +267,8 @@ class plant_diseases_detection():
         col1,col2=st.beta_columns(2)
         @st.cache(allow_output_mutation=True,persist=False)
         def classify_image(image,model):
-            #st.write("classifying......")
-            #img = Image.open(image)
-        
-            img=image.resize((224,224))
-            
-   
-      
+       
+            img=image.resize((224,224))       
             img=np.expand_dims(img,0)
             img=(img/255.0)
 
@@ -304,7 +287,6 @@ class plant_diseases_detection():
               pred,preds=classify_image(image,Xception_model)
               st.subheader("The Predicted Image is:")
               st.success(classes(pred))
-              #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
               st.subheader("Suggested Pesticide is:")
               st.info(pesticide_c(pred))
               st.balloons()
@@ -316,7 +298,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,MobileNetV2_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
@@ -325,7 +306,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
@@ -334,7 +314,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
@@ -344,7 +323,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                #st.write('Prediction probability :{:.2f}%'.format((np.max(preds)*100))
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
