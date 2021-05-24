@@ -218,14 +218,14 @@ class plant_diseases_detection():
         image=Image.open("DataImages/abhishek.jpg")
         image=image.resize((224,224))
         st.image(image,caption="Abhishek Gupta")
-        st.write("Email: abhideval870@gmail.com")
+        st.write("abhideval870@gmail.com")
 
 
       with col9:
         image=Image.open("DataImages/om.jpg")
         image=image.resize((224,224))
         st.image(image,caption="Om Prakash Swami")
-        st.write("Eamil: opswami189@gmail.com")
+        st.write("opswami189@gmail.com")
         
       
     def pesticide_c(pred):
