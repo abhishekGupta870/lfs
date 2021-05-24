@@ -108,7 +108,7 @@ class plant_diseases_detection():
         st.write("Training Accuracy of ResNet50 Model:",(resnet_training_acc),'%')
         st.write("Validation Accuracy of ResNet50 Model:",(resnet_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("DataImages/resnet_top_10.png")
+          image=Image.open("DataImages/resnet_top_10.PNG")
           st.image(image)
         
         col1,col2=st.beta_columns(2)
@@ -129,7 +129,7 @@ class plant_diseases_detection():
         st.write("Training Accuracy of VGG16 Model:",(vgg_training_acc),'%')
         st.write("Validation Accuracy of VGG16 Model:",(vgg_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("DataImages/vgg16_top_10.png")
+          image=Image.open("DataImages/vgg16_top_10.PNG")
           st.image(image)
         
         col1,col2=st.beta_columns(2)
@@ -150,7 +150,7 @@ class plant_diseases_detection():
         st.write("Training Accuracy of MobileNetV2 Model:",(mob_training_acc),'%')
         st.write("Validation Accuracy of MobileNetV2 Model:",(mob_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("DataImages/mobilenet_top_10.png")
+          image=Image.open("DataImages/mobilenet_top_10.PNG")
           st.image(image)
           
         col1,col2=st.beta_columns(2)
@@ -173,7 +173,7 @@ class plant_diseases_detection():
         st.write("Training Accuracy of Xception Model:",(Xception_training_acc),'%')
         st.write("Validation Accuracy of Xception Model:",(Xception_val_acc),'%' )
         if st.button("Epochs Details"):
-          image=Image.open("DataImages/xception_top_10.png")
+          image=Image.open("DataImages/xception_top_10.PNG")
           st.image(image)
         col1,col2=st.beta_columns(2)
         with col1:
@@ -194,7 +194,7 @@ class plant_diseases_detection():
         st.write("Training Accuracy of InceptionV3 Model:",(Inception_training_acc),'%')
         st.write("Validation Accuracy of InceptionV3 Model:",(Inception_val_acc),'%')
         if st.button("Epochs Details"):
-          image=Image.open("DataImages/inceptionv3_top_10.png")
+          image=Image.open("DataImages/inceptionv3_top_10.PNG")
           st.image(image)
         
         col1,col2=st.beta_columns(2)
