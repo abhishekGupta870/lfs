@@ -3,7 +3,7 @@ import streamlit as st
 from keras.models import load_model
 import time
 from googlesearch import search
-from PIL import Image,ImageOps
+from PIL import Image
 import numpy as np
 st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
 @st.cache(allow_output_mutation=True,persist=False)
