@@ -1,7 +1,6 @@
 import tensorflow as tf
 import streamlit as st
 from keras.models import load_model
-import io
 import time
 from googlesearch import search
 from PIL import Image,ImageOps
@@ -264,7 +263,6 @@ class plant_diseases_detection():
       st.set_option('deprecation.showfileUploaderEncoding', False)
       if file_uploader is not None:
         image=Image.open(file_uploader)
-        text_io = io.TextIOWrapper(file_uploader)
         image=image.resize((224,224))
         st.image(image,'Uploaded image:')
         
