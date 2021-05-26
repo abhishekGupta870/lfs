@@ -1,6 +1,7 @@
 import tensorflow as tf
 import streamlit as st
 from keras.models import load_model
+import io
 import time
 from googlesearch import search
 from PIL import Image,ImageOps
