@@ -28,7 +28,7 @@ class plant_diseases_detection():
     ######## -------------- Sidebarr--------------------->
     add_selectbox = st.sidebar.selectbox(
     'Select the Model for Classification',
-    ('Xception','VGG16',"ResNet50","InceptionV3",'MobileNetV2','About Data','Contact us'))
+    ('Xception',"ResNet50",'MobileNetV2',"InceptionV3",'VGG16','About Data','Contact us'))
     
 
     def classes(pred):
@@ -286,9 +286,10 @@ class plant_diseases_detection():
           if st.checkbox('Classify Image'):
             if(add_selectbox=='VGG16'):
               st.write("You are choosen Image classification with VGG16 model")
-              pred,preds=classify_image(image,Xception_model)
+              pred,preds=classify_image(image,VGG16_model)
               st.subheader("The Predicted Image is:")
               st.success(classes(pred))
+              st.write('Confidence probability',np.max(preds)*100)
               st.subheader("Suggested Pesticide is:")
               st.info(pesticide_c(pred))
               st.balloons()
@@ -300,14 +301,16 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,MobileNetV2_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
+                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
             if(add_selectbox=='ResNet50'):
                 st.write("You are choosen Image classification with ResNet50")
-                pred,preds=classify_image(image,Xception_model)
+                pred,preds=classify_image(image,ResNet50_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
+                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
@@ -316,15 +319,17 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
+                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
 
             if(add_selectbox=='InceptionV3'):
                 st.write("You are choosen Image classification with InceptionV3")
-                pred,preds=classify_image(image,Xception_model)
+                pred,preds=classify_image(image,InceptionV3_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
+                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
