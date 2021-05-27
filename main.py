@@ -272,7 +272,7 @@ class plant_diseases_detection():
         def classify_image(image,model):
        
 
-            img = cv.imread(image)
+            img = image
             mask = np.zeros(img.shape[:2],np.uint8)
             bgdModel = np.zeros((1,65),np.float64)
             fgdModel = np.zeros((1,65),np.float64)
