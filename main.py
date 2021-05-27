@@ -28,7 +28,7 @@ class plant_diseases_detection():
     ######## -------------- Sidebarr--------------------->
     add_selectbox = st.sidebar.selectbox(
     'Select the Model for Classification',
-    ('Xception','VGG16',"ResNet50","InceptionV3",'MobileNetV2','About Data','Contact us'))
+    ('Xception(Best)','VGG16',"ResNet50","InceptionV3",'MobileNetV2','About Data','Contact us'))
     
 
     def classes(pred):
