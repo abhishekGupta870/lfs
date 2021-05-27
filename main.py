@@ -4,7 +4,6 @@ from keras.models import load_model
 import time
 from googlesearch import search
 from PIL import Image
-import cv2 as cv
 import numpy as np
 st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
 @st.cache(allow_output_mutation=True,persist=False)
@@ -29,7 +28,7 @@ class plant_diseases_detection():
     ######## -------------- Sidebarr--------------------->
     add_selectbox = st.sidebar.selectbox(
     'Select the Model for Classification',
-    ('Xception',"ResNet50",'MobileNetV2',"InceptionV3",'VGG16','About Data','Contact us'))
+    ('Xception','VGG16',"ResNet50","InceptionV3",'MobileNetV2','About Data','Contact us'))
     
 
     def classes(pred):
@@ -264,7 +263,6 @@ class plant_diseases_detection():
       st.set_option('deprecation.showfileUploaderEncoding', False)
       if file_uploader is not None:
         image=Image.open(file_uploader)
-
         image=image.resize((224,224))
         st.image(image,'Uploaded image:')
         
@@ -272,8 +270,6 @@ class plant_diseases_detection():
         @st.cache(allow_output_mutation=True,persist=False)
         def classify_image(image,model):
        
-
-
             img=image.resize((224,224))       
             img=np.expand_dims(img,0)
             img=(img/255.0)
@@ -293,7 +289,6 @@ class plant_diseases_detection():
               pred,preds=classify_image(image,Xception_model)
               st.subheader("The Predicted Image is:")
               st.success(classes(pred))
-              st.write('Confidence probability',np.max(preds)*100)
               st.subheader("Suggested Pesticide is:")
               st.info(pesticide_c(pred))
               st.balloons()
@@ -305,7 +300,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,MobileNetV2_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
@@ -314,7 +308,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
@@ -323,7 +316,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
@@ -333,7 +325,6 @@ class plant_diseases_detection():
                 pred,preds=classify_image(image,Xception_model)
                 st.subheader("The Predicted Image is:")
                 st.success(classes(pred))
-                st.write('Confidence probability',np.max(preds)*100)
                 st.subheader("Suggested Pesticide is:")
                 st.info(pesticide_c(pred))
                 st.balloons()
