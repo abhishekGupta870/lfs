@@ -289,6 +289,7 @@ class plant_diseases_detection():
               pred,preds=classify_image(image,Xception_model)
               st.subheader("The Predicted Image is:")
               st.success(classes(pred))
+              st.success('Confidence prob ',np.max(pred)*100)
               st.subheader("Suggested Pesticide is:")
               st.info(pesticide_c(pred))
               st.balloons()
