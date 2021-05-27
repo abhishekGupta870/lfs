@@ -264,6 +264,14 @@ class plant_diseases_detection():
       st.set_option('deprecation.showfileUploaderEncoding', False)
       if file_uploader is not None:
         image=Image.open(file_uploader)
+        #img = cv.imread('')
+        mask = np.zeros(image.shape[:2],np.uint8)
+        bgdModel = np.zeros((1,65),np.float64)
+        fgdModel = np.zeros((1,65),np.float64)
+        rect = (50,50,450,290)
+        cv.grabCut(image,mask,rect,bgdModel,fgdModel,5,cv.GC_INIT_WITH_RECT)
+        mask2 = np.where((mask==2)|(mask==0),0,1).astype('uint8')
+        image = image*mask2[:,:,np.newaxis]
         image=image.resize((224,224))
         st.image(image,'Uploaded image:')
         
@@ -272,14 +280,7 @@ class plant_diseases_detection():
         def classify_image(image,model):
        
 
-            img = image
-            mask = np.zeros(img.shape[:2],np.uint8)
-            bgdModel = np.zeros((1,65),np.float64)
-            fgdModel = np.zeros((1,65),np.float64)
-            rect = (50,50,450,290)
-            cv.grabCut(img,mask,rect,bgdModel,fgdModel,5,cv.GC_INIT_WITH_RECT)
-            mask2 = np.where((mask==2)|(mask==0),0,1).astype('uint8')
-            img = img*mask2[:,:,np.newaxis]
+
             img=image.resize((224,224))       
             img=np.expand_dims(img,0)
             img=(img/255.0)
