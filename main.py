@@ -263,8 +263,8 @@ class plant_diseases_detection():
       file_uploader=st.file_uploader('Upload Image for Classification:')
       st.set_option('deprecation.showfileUploaderEncoding', False)
       if file_uploader is not None:
-        image=Image.open(file_uploader)
-        #img = cv.imread('')
+        #image=Image.open(file_uploader)
+        img = cv.imread(file_uploader)
         mask = np.zeros(image.shape[:2],np.uint8)
         bgdModel = np.zeros((1,65),np.float64)
         fgdModel = np.zeros((1,65),np.float64)
