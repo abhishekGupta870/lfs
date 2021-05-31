@@ -5,7 +5,6 @@ import time
 from googlesearch import search
 from PIL import Image
 import numpy as np
-import cv2 as cv
 st.set_page_config(page_title="Plant Disease Detection App", page_icon="icon.png", layout='centered', initial_sidebar_state='auto')
 @st.cache(allow_output_mutation=True,persist=False)
 def lModel(y):
@@ -263,16 +262,7 @@ class plant_diseases_detection():
       file_uploader=st.file_uploader('Upload Image for Classification:')
       st.set_option('deprecation.showfileUploaderEncoding', False)
       if file_uploader is not None:
-        #image=Image.open(file_uploader)
-        
-        img = cv.imread(file_uploader)
-        mask = np.zeros(img.shape[:2],np.uint8)
-        bgdModel = np.zeros((1,65),np.float64)
-        fgdModel = np.zeros((1,65),np.float64)
-        rect = (50,50,450,290)
-        cv.grabCut(img,mask,rect,bgdModel,fgdModel,5,cv.GC_INIT_WITH_RECT)
-        mask2 = np.where((mask==2)|(mask==0),0,1).astype('uint8')
-        image = img*mask2[:,:,np.newaxis]
+        image=Image.open(file_uploader)
         image=image.resize((224,224))
         st.image(image,'Uploaded image:')
         
